@@ -9,8 +9,8 @@
 ## What are the data sources?
 ## Data modelling
 ## Infrastructure as Code in AWS
-## Building an ETL pipeline in Apache Airflow
-## Building reports with Power BI 
+## Building an ETL pipeline with Apache Airflow
+## Visualizing AWS Redshift Data using Microsoft Power BI
 
 
 
