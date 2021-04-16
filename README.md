@@ -26,7 +26,33 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 
 
 ## Data modelling
-## Infrastructure as Code in AWS
+
+<div align="justify">
+ 
+Once the details for each type of receipt have been detected, it is easy to know what are the features, entities, and relations of the model. My proposed data model contains the expenses of both services separated in different fact tables, sharing dimensions between these facts, therefore, the proposed model will be a constellation scheme.
+
+</div>
+
+![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/dwh_schema.jpg)
+
+## Infrastructure as Code (IaC) in AWS
+
+<div align="justify">
+ 
+The aim of this section is to create a Redshift cluster on AWS and keep it available for use by the airflow DAG. In addition to preparing the infrastructure, the file ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb*** will help you to have an alternative staging zone in S3 as well.
+
+Below we list the different steps that are carried out in this file:
+
+- Create the required S3 buckets
+  - uber-tracking-expenses-bucket-s3
+  - airflow-runs-receipts
+- Move Uber receipts from your local computer to S3
+- Loading params from the dwh.cfg file
+
+'code'
+
+</div>
+
 ## Building an ETL data pipeline with Apache Airflow
 ## Visualizing AWS Redshift Data using Microsoft Power BI
 
