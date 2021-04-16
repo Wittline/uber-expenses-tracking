@@ -16,8 +16,6 @@
 
 
 
-https://www.loc.gov/preservation/digital/formats/fdd/fdd000388.shtml#:~:text=EML%2C%20short%20for%20electronic%20mail,as%20some%20other%20email%20programs.
-
 ## Data modelling
 ## Infrastructure as Code in AWS
 ## Building an ETL data pipeline with Apache Airflow
