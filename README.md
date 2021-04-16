@@ -48,12 +48,24 @@ Below we list the different steps that are carried out in this file:
   - airflow-runs-receipts
 - Move Uber receipts from your local computer to S3
 - Loading params from the dwh.cfg file
+- Creating clients for IAM, EC2 and Redshift cluster
+- Creating the IAM Role that makes Redshift able to access to S3 buckets **ReadOnly**
+- Creating Redshift cluster
+- Check cluster details until status show Available
+- Showing Redshift cluster endpoint and role ARN
+- Incoming TCP port to access to the cluster ednpoint
+- Checking the connection to the Redshift cluster
+- Cleaning and deleting the resources
 
-'code'
+ ```python
+put code here
+ ```
 
 </div>
 
 ## Building an ETL data pipeline with Apache Airflow
+
+
 ## Visualizing AWS Redshift Data using Microsoft Power BI
 
 
