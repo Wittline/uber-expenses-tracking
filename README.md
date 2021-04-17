@@ -1,4 +1,4 @@
-# Building an ETL data pipeline with Apache Airflow and Visualizing Redshift Data using Power BI
+# Building an ETL data pipeline with Apache Airflow and Visualizing AWS Redshift Data using Microsoft Power BI
 
 <div align="justify">
 
