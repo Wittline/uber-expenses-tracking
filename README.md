@@ -64,6 +64,8 @@ put code here
 
 ## Building an ETL data pipeline with Apache Airflow
 
+Below is the final DAG for this project:
+
 
 ## Visualizing AWS Redshift Data using Microsoft Power BI
 
