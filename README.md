@@ -82,11 +82,7 @@ The DAG is made up of several important tasks, but I will only explain a brief s
   - staging_eats
   - staging_eats_items
 - Once all the staging tables were created and filled, now the dimension tables will be filled, as you can see in the file **sql_statements.py** all the necessary dimensions and fact tables for the DWH depend on the information contained in the staging tables. To maintain the consistency of the data, we re filling the dimensions first and then the fact tables, there would be no problem using other way around, because redshift does not validate the foreign keys, <a href="https://www.stitchdata.com/blog/how-redshift-differs-from-postgresql/">this is because redshift is a database which focuses on handling large volumes of data for analytical queries.</a>
-- Once the filling of all the DWH tables is finished, we proceed to validate if there are records in them, it is a good practice to maintain a  <a href="https://arun-karunakaran.medium.com/build-quality-into-extract-transform-and-load-process-c02795ddcc93">data quality check</a> section in your ETL process for data integration. In the end I deleted the staging tables because they are no longer needed.
-
-
-
-
+- Once the filling of all the DWH tables is finished, we proceed to validate if there are records in them, it is a good practice to maintain a  <a href="https://arun-karunakaran.medium.com/build-quality-into-extract-transform-and-load-process-c02795ddcc93">data quality check</a> section in your ETL process for data integration. In the end, I deleted the staging tables because they are no longer needed.
 
 </div>
 
