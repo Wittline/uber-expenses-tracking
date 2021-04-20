@@ -70,13 +70,21 @@ This project requires that you have prior knowledge of these technologies, howev
 
 The DAG is made up of several important tasks, but I will only explain a brief summary  of what it does:
 
-</div>
 
 - At the beginning the task called **Start_UBER_Business** is separating the Uber Eats receipts from the Uber rides receipts found in the S3 bucket **uber-tracking-expenses-bucket-s3** int the folder **unprocessed_receipts**, both groups of receipts will be processed in parallel by the tasks **rides_receipts_to_s3_task** and **eats_receipts_to_s3_task**
-- The goal of these two tasks "rides_receipts_to_s3_task" and "eats_receipts_to_s3_task" that are running in parallel, is to condense in a single file all processed receipts of each kind eats and rides, the final datasets will be placed in the bucket **airflow-runs-receipts**, under the **/rides** and **/eats** folders as the case may be, the files are:
+- The goal of these two tasks **rides_receipts_to_s3_task** and **eats_receipts_to_s3_task** that are running in parallel, is to condense in a single file all processed receipts of each kind eats and rides, the final datasets will be placed in the bucket **airflow-runs-receipts**, under the **/rides** and **/eats** folders as the case may be, the files are:
   - eats_receipts.csv: Contains the information of all the receipts found for UBER Eats.
   - items_eats_receipts.csv: Contains information of all the products involved in the purchase of an order from UBER eats
   - rides_receipts.csv: Contains information on all receipts found for UBER Eats
+- Once the two previous processes are finished, the tasks related to create the necessary objects in redshift are executed, dimension tables, fact tables and staging tables.
+- Once the tables were created in Redshift, Now the staging tables will be filled. The COPY command is useful for move the .csv files from the S3 bucket to Redshift,  <a href="https://help.gooddata.com/doc/enterprise/en/data-integration/data-preparation-and-distribution/data-preparation-and-distribution-pipeline/data-pipeline-reference/data-warehouse-reference/how-to-set-up-a-connection-to-data-warehouse/connecting-to-data-warehouse-from-cloudconnect/loading-data-through-cloudconnect-to-data-warehouse/merging-data-using-staging-tables">There are several benefits of staging data</a>
+
+
+
+
+
+
+</div>
 
 
 
