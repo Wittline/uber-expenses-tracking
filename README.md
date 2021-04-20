@@ -66,15 +66,15 @@ put code here
 
 <div align="justify">
 
-This project requires that you have prior knowledge of these technologies, however my video on YouTube could help you in case you do not have experience with the tools, in this way you can mount the project without the need for previous experience.
-
-I will not delve into explaining what apache airflow is, this section will focus on explaining the process of integrating UBER receipts until reaching a common data source.
-
-</div>
+This project requires that you have prior knowledge of these technologies, however my YouTube video could help you in case you do not have experience with the tools, in this way you can mount the project without the need of previous experience. I will not delve into explaining what Apache Airflow is, this section will focus on explaining the process of data integration of the UBER receipts until reaching a common data source, the final data source is the data model that was designed in the previous section. :running: :stuck_out_tongue_winking_eye:
 
 The DAG is made up of several important tasks, but I will only explain a brief summary  of what it does:
 
-:running:
+</div>
+
+
+
+
 
 Below is the final DAG for this project:
 
