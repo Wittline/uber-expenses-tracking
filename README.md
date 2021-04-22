@@ -69,7 +69,8 @@ Below we list the different steps that are carried out in this file:
   - Cleaning and deleting the resources
 
 
-### Content of ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***
+#### Content of ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***
+
 > Libraries
 
  ```python
@@ -156,7 +157,8 @@ pd.DataFrame({"Param":
  ```
  
  
- > Creating clients for IAM, EC2 and Redshift ressources
+> Creating clients for IAM, EC2 and Redshift ressources
+
  ```python
 ec2 = boto3.resource('ec2',
                        region_name="us-east-2",
@@ -177,7 +179,7 @@ redshift = boto3.client('redshift',
  ```
  
  
- > Creating the IAM Role that makes Redshift able to access S3 buckets (ReadOnly)
+> Creating the IAM Role that makes Redshift able to access S3 buckets (ReadOnly)
  
  ```python
 try:
@@ -249,7 +251,8 @@ prettyRedshiftProps(myClusterProps)
 
 
  ```
-> Redshift Cluster endpoint and role ARN
+ 
+ > Redshift Cluster endpoint and role ARN
 
  ```python
  
@@ -294,7 +297,7 @@ print('Connected to Redshift')
  ```
 
 > Cleaning and deleting all the resources (Do not run these lines until finish your experiments)
-> 
+ 
  ```python 
  
 # redshift.delete_cluster( ClusterIdentifier=DWH_CLUSTER_IDENTIFIER,  SkipFinalClusterSnapshot=True)
