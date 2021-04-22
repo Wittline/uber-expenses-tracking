@@ -53,7 +53,7 @@ Below we list the different steps that are carried out in this file:
   - Go to <a href="https://colab.research.google.com/"> Google Colab </a>
   - Create a new Notebook
   - Go to -> Connect -> "Connect to local runtime" -> Paste the url copied from the last step and put it in Backend URL -> connect
-- Please the content of the file in this repository: ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***
+- Please copy and paste the content of the file in this repository or upload it to your colab local env: ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***
   - Create the required S3 buckets
     - uber-tracking-expenses-bucket-s3
     - airflow-runs-receipts
