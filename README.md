@@ -52,22 +52,24 @@ Below we list the different steps that are carried out in this file:
   - After the execution of the last command, copy the localhost url, you will need it for colab
   - Go to <a href="https://colab.research.google.com/"> Google Colab </a>
   - Create a new Notebook
-  - Go to -> Connect -> "Connect to local runtime" -> Paste the url copied from the last step in Backend URL -> connect
-- Create the required S3 buckets
-  - uber-tracking-expenses-bucket-s3
-  - airflow-runs-receipts
-- Move Uber receipts from your local computer to S3
-- Loading params from the dwh.cfg file
-- Creating clients for IAM, EC2 and Redshift cluster
-- Creating the IAM Role that makes Redshift able to access to S3 buckets **ReadOnly**
-- Creating Redshift cluster
-- Check cluster details until status show Available
-- Showing Redshift cluster endpoint and role ARN
-- Incoming TCP port to access to the cluster ednpoint
-- Checking the connection to the Redshift cluster
-- Cleaning and deleting the resources
+  - Go to -> Connect -> "Connect to local runtime" -> Paste the url copied from the last step and put it in Backend URL -> connect
+- Please the content of the file in this repository: ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***
+  - Create the required S3 buckets
+    - uber-tracking-expenses-bucket-s3
+    - airflow-runs-receipts
+  - Move Uber receipts from your local computer to S3
+  - Loading params from the dwh.cfg file
+  - Creating clients for IAM, EC2 and Redshift cluster
+  - Creating the IAM Role that makes Redshift able to access to S3 buckets **ReadOnly**
+  - Creating Redshift cluster
+  - Check cluster details until status show Available
+  - Showing Redshift cluster endpoint and role ARN
+  - Incoming TCP port to access to the cluster ednpoint
+  - Checking the connection to the Redshift cluster
+  - Cleaning and deleting the resources
 
 
+### Content of ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***
 > Libraries
 
  ```python
