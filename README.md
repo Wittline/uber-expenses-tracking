@@ -42,6 +42,8 @@ The aim of this section is to create a Redshift cluster on AWS and keep it avail
 
 Below we list the different steps that are carried out in this file:
 
+- First create a new User in AWS with *AdministratorAccess** and get your security credentials
+- Second go to this url: <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html ">AWS CLI </a> and configure your AWS Credentials in your local machine
 - Setup local environment with Google Colab
 - Create the required S3 buckets
   - uber-tracking-expenses-bucket-s3
@@ -135,9 +137,11 @@ DWH_IAM_ROLE_NAME      = config.get("DWH", "DWH_IAM_ROLE_NAME")
 (DWH_DB_USER, DWH_DB_PASSWORD, DWH_DB)
 
 pd.DataFrame({"Param":
-                  ["DWH_CLUSTER_TYPE", "DWH_NUM_NODES", "DWH_NODE_TYPE", "DWH_CLUSTER_IDENTIFIER", "DWH_DB", "DWH_DB_USER", "DWH_DB_PASSWORD", "DWH_PORT", "DWH_IAM_ROLE_NAME"],
+                  ["DWH_CLUSTER_TYPE", "DWH_NUM_NODES", "DWH_NODE_TYPE", "DWH_CLUSTER_IDENTIFIER", 
+                   "DWH_DB", "DWH_DB_USER", "DWH_DB_PASSWORD", "DWH_PORT", "DWH_IAM_ROLE_NAME"],
               "Value":
-                  [DWH_CLUSTER_TYPE, DWH_NUM_NODES, DWH_NODE_TYPE, DWH_CLUSTER_IDENTIFIER, DWH_DB, DWH_DB_USER, DWH_DB_PASSWORD, DWH_PORT, DWH_IAM_ROLE_NAME]
+                  [DWH_CLUSTER_TYPE, DWH_NUM_NODES, DWH_NODE_TYPE, DWH_CLUSTER_IDENTIFIER, 
+                  DWH_DB, DWH_DB_USER, DWH_DB_PASSWORD, DWH_PORT, DWH_IAM_ROLE_NAME]
              })
  ```
  
@@ -225,7 +229,8 @@ except Exception as e:
  
 def prettyRedshiftProps(props):
     pd.set_option('display.max_colwidth', -1)
-    keysToShow = ["ClusterIdentifier", "NodeType", "ClusterStatus", "MasterUsername", "DBName", "Endpoint", "NumberOfNodes", 'VpcId']
+    keysToShow = ["ClusterIdentifier", "NodeType", "ClusterStatus", "MasterUsername", 
+                  "DBName", "Endpoint", "NumberOfNodes", 'VpcId']
     x = [(k, v) for k,v in props.items() if k in keysToShow]
     return pd.DataFrame(data=x, columns=["Key", "Value"])
 
@@ -281,10 +286,8 @@ print('Connected to Redshift')
 > Cleaning and deleting all the resources (Do not run these lines until finish your experiments)
 > 
  ```python 
-
-# #-- Uncomment & run to delete the created resources
+ 
 # redshift.delete_cluster( ClusterIdentifier=DWH_CLUSTER_IDENTIFIER,  SkipFinalClusterSnapshot=True)
-
 
 # myClusterProps = redshift.describe_clusters(ClusterIdentifier=DWH_CLUSTER_IDENTIFIER)['Clusters'][0]
 # prettyRedshiftProps(myClusterProps)
