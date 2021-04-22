@@ -42,9 +42,17 @@ The aim of this section is to create a Redshift cluster on AWS and keep it avail
 
 Below we list the different steps that are carried out in this file:
 
-- First create a new User in AWS with *AdministratorAccess** and get your security credentials
-- Second go to this url: <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html ">AWS CLI </a> and configure your AWS Credentials in your local machine
-- Setup local environment with Google Colab
+- First, create a new User in AWS with *AdministratorAccess** and get your security credentials
+- Second, go to this url: <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html ">AWS CLI </a> and configure your AWS Credentials in your local machine
+- Setup local environment with Google Colab:
+  - Go to CMD and put: 
+      ```
+      C:\>jupyter notebook --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0
+      ```
+  - After the execution of the last command, copy the localhost url, you will need it for colab
+  - Go to <a href="https://colab.research.google.com/"> Google Colab </a>
+  - Create a new Notebook
+  - Go to -> Connect -> "Connect to local runtime" -> Paste the url copied from the last step in Backend URL -> connect
 - Create the required S3 buckets
   - uber-tracking-expenses-bucket-s3
   - airflow-runs-receipts
