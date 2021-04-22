@@ -42,6 +42,7 @@ The aim of this section is to create a Redshift cluster on AWS and keep it avail
 
 Below we list the different steps that are carried out in this file:
 
+- Setup local environment with Google Colab
 - Create the required S3 buckets
   - uber-tracking-expenses-bucket-s3
   - airflow-runs-receipts
@@ -56,6 +57,9 @@ Below we list the different steps that are carried out in this file:
 - Checking the connection to the Redshift cluster
 - Cleaning and deleting the resources
 
+
+> Libraries
+
  ```python
 import pandas as pd
 import glob
@@ -66,7 +70,9 @@ import configparser
 from botocore.exceptions import ClientError
 import psycopg2
 ```
- 
+
+> Buckets creation, folders and uploading the local files to S3
+
 ```python
 def bucket_s3_exists(b):
     s3 = boto3.resource('s3')
@@ -104,7 +110,9 @@ for file in files:
     print(upload_files_to_s3(file, 'uber-tracking-expenses-bucket-s3', 'unprocessed_receipts', None, ACLargs))
  
  ```
- 
+
+> Loading all the Params from the dwh.cfg file
+
  ```python
  config = configparser.ConfigParser()
 config.read_file(open('/Users/ramse/Desktop/UBER TRACKING/dwh.cfg'))
@@ -134,6 +142,7 @@ pd.DataFrame({"Param":
  ```
  
  
+ > Creating clients for IAM, EC2 and Redshift ressources
  ```python
 ec2 = boto3.resource('ec2',
                        region_name="us-east-2",
@@ -152,6 +161,9 @@ redshift = boto3.client('redshift',
                        aws_secret_access_key=SECRET
                        )
  ```
+ 
+ 
+ > Creating the IAM Role that makes Redshift able to access S3 buckets (ReadOnly)
  
  ```python
 try:
@@ -182,7 +194,9 @@ roleArn = iam.get_role(RoleName=DWH_IAM_ROLE_NAME)['Role']['Arn']
 print(roleArn)
 
  ```
- 
+
+> Creating Redshift Cluster
+
  ```python
 try:
     response = redshift.create_cluster(        
@@ -204,7 +218,9 @@ except Exception as e:
     print(e)
 
  ```
- 
+
+> Redshift Cluster Details (Run ths piece of code several times until status show Available)
+
  ```python
  
 def prettyRedshiftProps(props):
@@ -218,7 +234,8 @@ prettyRedshiftProps(myClusterProps)
 
 
  ```
- 
+> Redshift Cluster endpoint and role ARN
+
  ```python
  
 DWH_ENDPOINT = myClusterProps['Endpoint']['Address']
@@ -227,7 +244,9 @@ print("DWH_ENDPOINT :: ", DWH_ENDPOINT)
 print("DWH_ROLE_ARN :: ", DWH_ROLE_ARN)
  
  ```
- 
+
+> Incoming TCP port to access to the cluster endpoint
+
  ```python
 
 try:
@@ -245,26 +264,22 @@ except Exception as e:
     print(e)
  
  ```
- 
+
+> Checking the connection to the redshift cluster
+
  ```python
  
 conn_string="postgresql://{}:{}@{}:{}/{}".format(DWH_DB_USER, DWH_DB_PASSWORD, DWH_ENDPOINT, DWH_PORT,DWH_DB)
 print(conn_string)
  
- 
- ```
- 
- 
- ```python
- 
- print('Connecting to RedShift', conn_string)
+print('Connecting to RedShift', conn_string)
 conn = psycopg2.connect(conn_string)
 print('Connected to Redshift')
  
- 
  ```
- 
- 
+
+> Cleaning and deleting all the resources (Do not run these lines until finish your experiments)
+> 
  ```python 
 
 # #-- Uncomment & run to delete the created resources
@@ -279,7 +294,6 @@ print('Connected to Redshift')
 
  ```
  
-
   
 </div>
 
