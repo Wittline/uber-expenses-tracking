@@ -95,7 +95,7 @@ Below is the final DAG for this project:
 
 <div align="justify">
  
-Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad for Uber Eats and Uber Rides, publish the report to Power BI service, and you can consume the report from your phone as well.
+Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad for Uber Eats and Uber Rides, publish the report to Power BI service, and you can consume the report from your mobile device as well.
 
 - Launch Power BI Desktop
 - Sign in to the Service with your Power BI credentials
