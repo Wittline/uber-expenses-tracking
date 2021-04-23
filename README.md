@@ -329,7 +329,6 @@ Amazon AWS has an answer to the need of data engineers who love Apache Airflow i
 ``` 
 ramse@DESKTOP-K6K6E5A MINGW64 /c
 $ git clone https://github.com/Wittline/Uber-expenses-tracking.git
-
 ```
 
 - Once all the files needed were downloaded from the repository , Let's run everything :see_no_evil: :hear_no_evil: :speak_no_evil: we will use the git bash tool again, go to the folder **Uber-expenses-tracking** we will run docker compose command
@@ -341,15 +340,18 @@ $ cd Uber-expenses-tracking
 ramse@DESKTOP-K6K6E5A MINGW64 /c/Uber-expenses-tracking
 ```
 
+```linux 
+ramse@DESKTOP-K6K6E5A MINGW64 /c/Uber-expenses-tracking
+$ echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
+```
+
 ```linux
 ramse@DESKTOP-K6K6E5A MINGW64 /c/Uber-expenses-tracking
 $ docker-compose up airflow-init
-
 ```
 
 ```linux 
 $ docker-compose up
-
 ```
 
 
