@@ -117,7 +117,7 @@ for k in bucket_names:
     if not bucket_s3_exists(k):
        create_s3_bucket(k, bucket_names[k])    
          
-files = glob.glob("/Users/ramse/Desktop/UBER TRACKING/receipts/*")
+files = glob.glob("/localpath/receipts/*")
 
 for file in files:
     print(upload_files_to_s3(file, 'uber-tracking-expenses-bucket-s3', 'unprocessed_receipts', None, ACLargs))
@@ -128,7 +128,7 @@ for file in files:
 
  ```python
  config = configparser.ConfigParser()
-config.read_file(open('/Users/ramse/Desktop/UBER TRACKING/dwh.cfg'))
+config.read_file(open('/localpath/dwh.cfg'))
 
 KEY                    = config.get('AWS','KEY')
 SECRET                 = config.get('AWS','SECRET')
