@@ -319,6 +319,38 @@ print('Connected to Redshift')
 
 This project requires that you have prior knowledge of these technologies, however my YouTube video could help you in case you do not have experience with the tools, in this way you can mount the project without the need of previous experience. I will not delve into explaining what Apache Airflow is, this section will focus on explaining the process of data integration of the UBER receipts until reaching a common data source, the final data source is the data model that was designed in the previous section. :running: :stuck_out_tongue_winking_eye:
 
+### Docker environment
+
+Amazon AWS has an answer to the need of data engineers who love Apache Airflow in the cloud, here you can read more about it: <a href="https://aws.amazon.com/es/blogs/aws/introducing-amazon-managed-workflows-for-apache-airflow-mwaa/">Introducing Amazon Managed Workflows for Apache Airflow (MWAA)</a>, However this project uses a <a href="https://www.docker.com/">Docker</a> container. follow the steps below in order to accelerate the deployment of this project using docker:
+
+- Install <a href="https://docs.docker.com/docker-for-windows/install/">Docker Desktop on Windows</a>, it will install **docker compose** as well, docker compose will alow you to run multiple containers applications, Apache airflow has three main components: **metadata database**, **scheduler** and **webserver**, int this case we will use a celery executor too.
+- Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>, once installed , open **git bash** and create a new folder
+
+ ``` 
+ramse@DESKTOP-K6K6E5A MINGW64 /c
+$ mkdir airflow-docker
+
+ ```
+
+- Once the folder was created , go to the new folder location
+
+``` 
+ramse@DESKTOP-K6K6E5A MINGW64 /c
+$ cd airflow-docker
+ramse@DESKTOP-K6K6E5A MINGW64 /c/airflow-docker
+
+ ```
+ 
+- Inside the new folder download the docker compose file **docker-compose.yaml**
+
+``` 
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml'
+
+```
+
+
+### DAG
+
 The DAG is made up of several important tasks, but I will only explain a brief summary  of what it does:
 
 
