@@ -116,9 +116,6 @@ def upload_files_to_s3(file_name, b, folder, object_name, args=None):
 
     return response
 
-print('Downloading Github repository: Uber-expenses-tracking...')
-git.Git("C:/").clone("git://github.com/Wittline/Uber-expenses-tracking.git")
-print('Github repository downloaded')
 
 ACLargs = {'ACL':'authenticated-read' }
 bucket_names = {'uber-tracking-expenses-bucket-s3': 'unprocessed_receipts', 'airflow-runs-receipts':'eats,rides'}
