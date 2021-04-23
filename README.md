@@ -363,6 +363,7 @@ Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad 
    - Choose My workspace.
    - Choose Select.
 
+
 </div>
 
 
