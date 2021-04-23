@@ -40,7 +40,7 @@ Once the details for each type of receipt have been detected, it is easy to know
  
 The aim of this section is to create a Redshift cluster on AWS and keep it available for use by the airflow DAG. In addition to preparing the infrastructure, the file ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb*** will help you to have an alternative staging zone in S3 as well.
 
-Below we list the different steps the things carried out in this file:
+Below we list the different steps and the things carried out in this file:
 
 - First, Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>.
 - Second, create a new User in AWS with *AdministratorAccess** and get your security credentials
