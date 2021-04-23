@@ -42,8 +42,15 @@ The aim of this section is to create a Redshift cluster on AWS and keep it avail
 
 Below we list the different steps that are carried out in this file:
 
-- First, create a new User in AWS with *AdministratorAccess** and get your security credentials
-- Second, go to this url: <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html ">AWS CLI </a> and configure your AWS Credentials in your local machine
+- First, Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>, once installed , open **git bash** and download this repository, this will download the **dags** folder and the **docker-compose.yaml** file, and other files needed for this project.
+
+``` 
+ramse@DESKTOP-K6K6E5A MINGW64 /c
+$ git clone https://github.com/Wittline/Uber-expenses-tracking.git
+```
+
+- Second, create a new User in AWS with *AdministratorAccess** and get your security credentials
+- Go to this url: <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html ">AWS CLI </a> and configure your AWS Credentials in your local machine
 - Setup local environment with Google Colab:
   - Go to CMD and put: 
       ```
@@ -324,12 +331,6 @@ This project requires that you have prior knowledge of these technologies, howev
 Amazon AWS has an answer to the need of data engineers who love Apache Airflow in the cloud, here you can read more about it: <a href="https://aws.amazon.com/es/blogs/aws/introducing-amazon-managed-workflows-for-apache-airflow-mwaa/">Introducing Amazon Managed Workflows for Apache Airflow (MWAA)</a>, However this project uses a <a href="https://www.docker.com/">Docker</a> container. follow the steps below in order to accelerate the deployment of this project using docker:
 
 - Install <a href="https://docs.docker.com/docker-for-windows/install/">Docker Desktop on Windows</a>, it will install **docker compose** as well, docker compose will alow you to run multiple containers applications, Apache airflow has three main components: **metadata database**, **scheduler** and **webserver**, int this case we will use a celery executor too.
-- Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>, once installed , open **git bash** and download this repository, this will download the **dags** folder and the **docker-compose.yaml** file, and other files needed.
-
-``` 
-ramse@DESKTOP-K6K6E5A MINGW64 /c
-$ git clone https://github.com/Wittline/Uber-expenses-tracking.git
-```
 
 - Once all the files needed were downloaded from the repository , Let's run everything :see_no_evil: :hear_no_evil: :speak_no_evil: we will use the git bash tool again, go to the folder **Uber-expenses-tracking** we will run docker compose command
 
@@ -381,7 +382,7 @@ $ docker ps
 $ docker exec 514e3077fafa airflow dags trigger Uber_tracking_expenses
 ```
 
-- The other way for execute dags is using the GUI, which is more esy to understand and manage :wink:
+- The other way for execute dags is using the GUI, which is easier to understand and manage :wink:
 
 
 ### DAG Details
