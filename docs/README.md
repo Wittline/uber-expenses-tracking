@@ -40,15 +40,9 @@ Once the details for each type of receipt have been detected, it is easy to know
  
 The aim of this section is to create a Redshift cluster on AWS and keep it available for use by the airflow DAG. In addition to preparing the infrastructure, the file ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb*** will help you to have an alternative staging zone in S3 as well.
 
-Below we list the different steps that are carried out in this file:
+Below we list the different steps the things carried out in this file:
 
-- First, Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>, once installed , open **git bash** and download this repository, this will download the **dags** folder and the **docker-compose.yaml** file, and other files needed for this project.
-
-``` 
-ramse@DESKTOP-K6K6E5A MINGW64 /c
-$ git clone https://github.com/Wittline/Uber-expenses-tracking.git
-```
-
+- First, Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>.
 - Second, create a new User in AWS with *AdministratorAccess** and get your security credentials
 - Go to this url: <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html ">AWS CLI </a> and configure your AWS Credentials in your local machine
 - Setup local environment with Google Colab:
@@ -61,6 +55,7 @@ $ git clone https://github.com/Wittline/Uber-expenses-tracking.git
   - Create a new Notebook
   - Go to -> Connect -> "Connect to local runtime" -> Paste the url copied from the last step and put it in Backend URL -> connect
 - Please copy and paste the content of the file in this repository or upload it to your colab local env: ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***
+  - Clone this repository https://github.com/Wittline/Uber-expenses-tracking.git, this will download the **dags** folder and the **docker-compose.yaml** file, and other files needed for this project. 
   - Create the required S3 buckets
     - uber-tracking-expenses-bucket-s3
     - airflow-runs-receipts
@@ -91,7 +86,7 @@ from botocore.exceptions import ClientError
 import psycopg2
 ```
 
-> Buckets creation, folders and uploading the local files to S3
+> Cloning repository, Buckets creation, folders and uploading the local files to S3
 
 ```python
 def bucket_s3_exists(b):
@@ -117,17 +112,29 @@ def upload_files_to_s3(file_name, b, folder, object_name, args=None):
 
     return response
 
+print('Downloading Github repository: Uber-expenses-tracking...')
+git.Git("C:/").clone("git://github.com/Wittline/Uber-expenses-tracking.git")
+print('Github repository downloaded')
+
 ACLargs = {'ACL':'authenticated-read' }
 bucket_names = {'uber-tracking-expenses-bucket-s3': 'unprocessed_receipts', 'airflow-runs-receipts':'eats,rides'}
 
+print('Creating the S3 buckets...')
 for k in bucket_names:
     if not bucket_s3_exists(k):
        create_s3_bucket(k, bucket_names[k])    
-         
-files = glob.glob("/localpath/receipts/*")
+
+print('S3 buckets created')
+
+print('Uploading the local receipts files to uber-tracking-expenses-bucket-s3 AWS S3 bucket...')
+files = glob.glob("localpath/receipts/*")
 
 for file in files:
+    print("Uploading file:", file)
     print(upload_files_to_s3(file, 'uber-tracking-expenses-bucket-s3', 'unprocessed_receipts', None, ACLargs))
+
+
+print('Files uploaded to uber-tracking-expenses-bucket-s3 AWS S3 bucket')
  
  ```
 
