@@ -338,21 +338,35 @@ ramse@DESKTOP-K6K6E5A MINGW64 /c
 $ cd Uber-expenses-tracking
 
 ramse@DESKTOP-K6K6E5A MINGW64 /c/Uber-expenses-tracking
+$ cd code
 ```
 
 ```linux 
-ramse@DESKTOP-K6K6E5A MINGW64 /c/Uber-expenses-tracking
+ramse@DESKTOP-K6K6E5A MINGW64 /c/Uber-expenses-tracking/code
 $ echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
 ```
 
 ```linux
-ramse@DESKTOP-K6K6E5A MINGW64 /c/Uber-expenses-tracking
+ramse@DESKTOP-K6K6E5A MINGW64 /c/Uber-expenses-tracking/code
 $ docker-compose up airflow-init
 ```
 
 ```linux 
 $ docker-compose up
 ```
+
+Ready, everything is up and running :grin:, the next thing to do is go to your browser and search http://localhost:8080/ this will call your webserver and would open your AIRFLOW GUI, for this example the **user** and **password** is "airflow", you can change it in your **.yaml** file
+
+There is a couple of thing to configure to ensure the successful execution of your DAG:
+- Once inside your AIRFLOW GUI, In the header menu > Admin > Variables, Import the variables needed, they are located into the variables folder in the repository downloaded, import the **variables.json** file
+
+![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/variables.png)
+
+
+- Now go to Admin > Connections  and put the Connections needed, you AWS credentials and Your Redshift credentials
+
+![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/connections.png)
+
 
 
 ### DAG
