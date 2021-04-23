@@ -363,13 +363,28 @@ There is a couple of thing to configure to ensure the successful execution of yo
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/variables.png)
 
 
-- Now go to Admin > Connections  and put the Connections needed, you AWS credentials and Your Redshift credentials
+- Now go to Admin > Connections and put the Connections needed, you AWS credentials and Your Redshift credentials
 
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/connections.png)
 
 
+### Run DAG
 
-### DAG
+- Open a new git-bash console and put the below command, it will show you a list of containers with their ids 
+
+```linux
+$ docker ps
+```
+
+- The scheduler are putting the dags for running, so, choose the container id related with the scheduler and execute the command below, it will execute the dags
+```linux 
+$ docker exec 514e3077fafa airflow dags trigger Uber_tracking_expenses
+```
+
+- The other way for execute dags is using the GUI, which is more esy to understand and manage :wink:
+
+
+### DAG Details
 
 The DAG is made up of several important tasks, but I will only explain a brief summary  of what it does:
 
