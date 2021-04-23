@@ -1,0 +1,4 @@
+{
+    "s3_bucket": "uber-tracking-expenses-bucket-s3",
+    "s3_prefix": "unprocessed_receipts"
+}
