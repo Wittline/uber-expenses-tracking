@@ -42,7 +42,12 @@ The aim of this section is to create a Redshift cluster on AWS and keep it avail
 
 Below we list the different steps and the things carried out in this file:
 
-- First, Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>.
+- - Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>, once installed , open **git bash** and download this repository, this will download the **dags** folder and the **docker-compose.yaml** file, and other files needed.
+
+``` 
+ramse@DESKTOP-K6K6E5A MINGW64 /c
+$ git clone https://github.com/Wittline/Uber-expenses-tracking.git
+```
 - Second, create a new User in AWS with *AdministratorAccess** and get your security credentials
 - Go to this url: <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html ">AWS CLI </a> and configure your AWS Credentials in your local machine
 - Setup local environment with Google Colab:
@@ -54,21 +59,20 @@ Below we list the different steps and the things carried out in this file:
   - Go to <a href="https://colab.research.google.com/"> Google Colab </a>
   - Create a new Notebook
   - Go to -> Connect -> "Connect to local runtime" -> Paste the url copied from the last step and put it in Backend URL -> connect
-- Please copy and paste the content of the file in this repository or upload it to your colab local env: ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***
-  - Clone this repository https://github.com/Wittline/Uber-expenses-tracking.git, this will download the **dags** folder and the **docker-compose.yaml** file, and other files needed for this project. 
-  - Create the required S3 buckets
-    - uber-tracking-expenses-bucket-s3
-    - airflow-runs-receipts
-  - Move Uber receipts from your local computer to S3
-  - Loading params from the dwh.cfg file
-  - Creating clients for IAM, EC2 and Redshift cluster
-  - Creating the IAM Role that makes Redshift able to access to S3 buckets **ReadOnly**
-  - Creating Redshift cluster
-  - Check cluster details until status show Available
-  - Showing Redshift cluster endpoint and role ARN
-  - Incoming TCP port to access to the cluster ednpoint
-  - Checking the connection to the Redshift cluster
-  - Cleaning and deleting the resources
+  - Upload the file ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***, and use it into your colab local env: 
+    - Create the required S3 buckets
+       - uber-tracking-expenses-bucket-s3
+       - airflow-runs-receipts
+    - Move Uber receipts from your local computer to S3
+    - Loading params from the dwh.cfg file
+    - Creating clients for IAM, EC2 and Redshift cluster
+    - Creating the IAM Role that makes Redshift able to access to S3 buckets **ReadOnly**
+    - Creating Redshift cluster
+    - Check cluster details until status show Available
+    - Showing Redshift cluster endpoint and role ARN
+    - Incoming TCP port to access to the cluster ednpoint
+    - Checking the connection to the Redshift cluster
+    - Cleaning and deleting the resources
 
 
 #### Content of ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***
