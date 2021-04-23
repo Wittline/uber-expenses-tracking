@@ -326,31 +326,32 @@ Amazon AWS has an answer to the need of data engineers who love Apache Airflow i
 - Install <a href="https://docs.docker.com/docker-for-windows/install/">Docker Desktop on Windows</a>, it will install **docker compose** as well, docker compose will alow you to run multiple containers applications, Apache airflow has three main components: **metadata database**, **scheduler** and **webserver**, int this case we will use a celery executor too.
 - Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>, once installed , open **git bash** and download this repository, this will download the **dags** folder and the **docker-compose.yaml** file, and other files needed.
 
- ``` 
+``` 
 ramse@DESKTOP-K6K6E5A MINGW64 /c
 $ git clone https://github.com/Wittline/Uber-expenses-tracking.git
 
- ```
+```
+
 - Once all the files needed were downloaded from the repository , Let's run everything :see_no_evil: :hear_no_evil: :speak_no_evil: we will use the git bash tool again, go to the folder **Uber-expenses-tracking** we will run docker compose command
 
-``` 
+```linux 
 ramse@DESKTOP-K6K6E5A MINGW64 /c
 $ cd Uber-expenses-tracking
 
 ramse@DESKTOP-K6K6E5A MINGW64 /c/Uber-expenses-tracking
-
 ```
+
+```linux
 ramse@DESKTOP-K6K6E5A MINGW64 /c/Uber-expenses-tracking
 $ docker-compose up airflow-init
 
+```
 
-``` 
-ramse@DESKTOP-K6K6E5A MINGW64 /c
-$ cd Uber-expenses-tracking
-
-ramse@DESKTOP-K6K6E5A MINGW64 /c/Uber-expenses-tracking
+```linux 
+$ docker-compose up
 
 ```
+
 
 ### DAG
 
