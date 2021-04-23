@@ -42,7 +42,7 @@ The aim of this section is to create a Redshift cluster on AWS and keep it avail
 
 Below we list the different steps and the things carried out in this file:
 
-- - Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>, once installed , open **git bash** and download this repository, this will download the **dags** folder and the **docker-compose.yaml** file, and other files needed.
+- Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>, once installed , open **git bash** and download this repository, this will download the **dags** folder and the **docker-compose.yaml** file, and other files needed.
 
 ``` 
 ramse@DESKTOP-K6K6E5A MINGW64 /c
