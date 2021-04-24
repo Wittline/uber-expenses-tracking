@@ -417,7 +417,7 @@ The DAG is made up of several important tasks, but I will only explain a brief s
 </p>
 
 <div align="justify">
-- At the beginning, the task called **Start_UBER_Business** is separating the Uber Eats receipts from the Uber rides receipts found in the S3 bucket **uber-tracking-expenses-bucket-s3** in the folder **unprocessed_receipts**, both groups of receipts will be processed in parallel by the tasks **rides_receipts_to_s3_task** and **eats_receipts_to_s3_task**
+* At the beginning, the task called **Start_UBER_Business** is separating the Uber Eats receipts from the Uber rides receipts found in the S3 bucket **uber-tracking-expenses-bucket-s3** in the folder **unprocessed_receipts**, both groups of receipts will be processed in parallel by the tasks **rides_receipts_to_s3_task** and **eats_receipts_to_s3_task**
 
 </div>
 
