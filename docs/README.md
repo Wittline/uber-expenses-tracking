@@ -476,4 +476,4 @@ Any ideas or feedback about this repository?. Help me to improve it.
 - Created on 2021
 
 ## License
-This project is licensed under the terms of the MIT license.
+This project is licensed under the terms of the Apache License.
