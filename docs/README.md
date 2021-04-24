@@ -34,7 +34,7 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 <p align="justify"> 
 Once the details for each type of receipt have been detected, it is easy to know what are the features, entities, and relations of the model. My proposed data model contains the expenses of both services separated in different fact tables, sharing dimensions between these facts, therefore, the proposed model will be a constellation scheme.
 
-</div>
+</p>
 
  
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/dwh_schema.jpg)
@@ -80,6 +80,7 @@ $ git clone https://github.com/Wittline/Uber-expenses-tracking.git
     - Checking the connection to the Redshift cluster
     - Cleaning and deleting the resources
 
+</p>
 
 #### Content of ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***
 
@@ -328,8 +329,7 @@ print('Connected to Redshift')
 # iam.detach_role_policy(RoleName=DWH_IAM_ROLE_NAME, PolicyArn="arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess")
 # iam.delete_role(RoleName=DWH_IAM_ROLE_NAME)
  ```
- 
-</div>
+
 
 ## Building an ETL data pipeline with Apache Airflow
 
