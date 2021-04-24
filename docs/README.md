@@ -18,7 +18,9 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 #### Uber Rides receipt example
 
 <p align="center">
+ 
  ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/rides_receipt_example.png)
+ 
 </p>
 
 
@@ -26,7 +28,9 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 #### Uber Eats receipt example
 
 <p align="center">
+ 
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/eats_receipt_example.png)
+
 </p>
 
 
