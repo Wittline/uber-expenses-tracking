@@ -1,4 +1,4 @@
-# Building an ETL data pipeline with Apache Airflow and Visualizing AWS Redshift Data using Microsoft Power BI (Uber expenses tracking)
+# Building an ETL data pipeline with Apache Airflow and Visualizing AWS Redshift data using Microsoft Power BI (Uber expenses tracking)
 
 <div align="justify">
 
@@ -439,7 +439,7 @@ Below is the final DAG for this project:
 
 </p>
 
-## Visualizing AWS Redshift Data using Microsoft Power BI
+## Visualizing AWS Redshift data using Microsoft Power BI
 
 <div align="justify">
  
