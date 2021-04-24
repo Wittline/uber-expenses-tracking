@@ -43,7 +43,9 @@ Once the details for each type of receipt have been detected, it is easy to know
 </div>
 
 <p align="center">
+ 
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/dwh_schema.jpg)
+
 </p>
 
 
@@ -380,13 +382,17 @@ There is a couple of thing to configure to ensure the successful execution of yo
 - Once inside your AIRFLOW GUI, In the header menu > Admin > Variables, Import the variables needed, they are located into the variables folder in the repository downloaded, import the **variables.json** file
 
 <p align="center">
+ 
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/variables.png)
+
 </p>
 
 - Now go to Admin > Connections and put the Connections needed, you AWS credentials and Your Redshift credentials
 
 <p align="center">
+ 
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/connections.png)
+
 </p>
 
 ### Run DAG
@@ -428,7 +434,9 @@ The DAG is made up of several important tasks, but I will only explain a brief s
 Below is the final DAG for this project:
 
 <p align="center">
+ 
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/dag.PNG)
+
 </p>
 
 ## Visualizing AWS Redshift Data using Microsoft Power BI
@@ -447,7 +455,9 @@ Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad 
 
 
 <p align="center">
-   <img src="/docs/Images/powerBi_uber_services.gif?raw=true">   
+ 
+   <img src="/docs/Images/powerBi_uber_services.gif?raw=true">
+   
 </p>
 
  - Publishing to Power BI, After you create the dashboards in Power BI Desktop, you will need to publish the dataset and dashboards to Power BI to share it with others or consume it from a mobile device.
