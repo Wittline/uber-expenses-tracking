@@ -4,7 +4,6 @@
 
 Have you heard phrases like ***Hungry? You're in the right place*** or ***Request a trip, hop in, and relax.*** ? :roll_eyes: Both phrases are very common in our daily lives, they represent the emblems of the two most important businesses with <a href="https://qz.com/1889602/uber-q2-2020-earnings-eats-is-now-bigger-than-rides/"> millionaire revenues </a> from UBER. ***Have you ever thought about how much money you spend on these services?*** The goal of this project is to track the expenses of <a href="https://www.uber.com/">Uber Rides</a> and <a  href="https://www.ubereats.com/">Uber Eats</a> through a data Engineering processes using technologies such as <a href="https://airflow.apache.org/">Apache Airflow</a>, <a href="https://aws.amazon.com/es/redshift/">AWS Redshift</a> and <a href="https://powerbi.microsoft.com/es-es/">Power BI</a>. Keep reading this article, I will show you a quick and easy way to automate everything step by step.
 
-
 </div>
 
 ## What are the data sources?
@@ -17,21 +16,18 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 
 ### Uber Rides receipt example
 
-<p align="center">
- 
+
  ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/rides_receipt_example.png)
  
-</p>
 
 
 
 ### Uber Eats receipt example
 
-<p align="center">
+
  
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/eats_receipt_example.png)
 
-</p>
 
 
 ## Data modelling
@@ -42,11 +38,9 @@ Once the details for each type of receipt have been detected, it is easy to know
 
 </div>
 
-<p align="center">
  
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/dwh_schema.jpg)
 
-</p>
 
 
 ## Infrastructure as Code (IaC) in AWS
@@ -381,19 +375,17 @@ Ready, everything is up and running :grin:, the next thing to do is go to your b
 There is a couple of thing to configure to ensure the successful execution of your DAG:
 - Once inside your AIRFLOW GUI, In the header menu > Admin > Variables, Import the variables needed, they are located into the variables folder in the repository downloaded, import the **variables.json** file
 
-<p align="center">
+
  
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/variables.png)
 
-</p>
 
 - Now go to Admin > Connections and put the Connections needed, you AWS credentials and Your Redshift credentials
 
-<p align="center">
+
  
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/connections.png)
 
-</p>
 
 ### Running DAG
 
@@ -433,11 +425,10 @@ The DAG is made up of several important tasks, but I will only explain a brief s
 
 Below is the final DAG for this project:
 
-<p align="center">
+
  
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/dag.PNG)
 
-</p>
 
 ## Visualizing AWS Redshift data using Microsoft Power BI
 
