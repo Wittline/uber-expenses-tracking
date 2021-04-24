@@ -343,11 +343,13 @@ This project requires that you have prior knowledge of these technologies, howev
 <p align="justify">
 Amazon AWS has an answer to the need of data engineers who love Apache Airflow in the cloud, here you can read more about it: <a href="https://aws.amazon.com/es/blogs/aws/introducing-amazon-managed-workflows-for-apache-airflow-mwaa/">Introducing Amazon Managed Workflows for Apache Airflow (MWAA)</a>, However this project uses a <a href="https://www.docker.com/">Docker</a> container, follow the steps below in order to accelerate the deployment of this project using docker:
 
+</p>
+
 - Install <a href="https://docs.docker.com/docker-for-windows/install/">Docker Desktop on Windows</a>, it will install **docker compose** as well, docker compose will alow you to run multiple containers applications, Apache airflow has three main components: **metadata database**, **scheduler** and **webserver**, in this case we will use a celery executor too.
 
 - Once all the files needed were downloaded from the repository , Let's run everything we will use the git bash tool again, go to the folder **Uber-expenses-tracking** we will run docker compose command
 
-</p>
+
 
 ```linux 
 ramse@DESKTOP-K6K6E5A MINGW64 /c
