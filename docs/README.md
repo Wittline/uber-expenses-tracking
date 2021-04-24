@@ -345,7 +345,7 @@ Amazon AWS has an answer to the need of data engineers who love Apache Airflow i
 
 - Install <a href="https://docs.docker.com/docker-for-windows/install/">Docker Desktop on Windows</a>, it will install **docker compose** as well, docker compose will alow you to run multiple containers applications, Apache airflow has three main components: **metadata database**, **scheduler** and **webserver**, in this case we will use a celery executor too.
 
-- Once all the files needed were downloaded from the repository , Let's run everything :see_no_evil: :hear_no_evil: :speak_no_evil: we will use the git bash tool again, go to the folder **Uber-expenses-tracking** we will run docker compose command
+- Once all the files needed were downloaded from the repository , Let's run everything we will use the git bash tool again, go to the folder **Uber-expenses-tracking** we will run docker compose command
 
 </p>
 
