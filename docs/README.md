@@ -485,9 +485,8 @@ Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad 
  
 </p>
  
-![powerBi_uber_services](https://github.com/wittline/Uber-expenses-tracking/blob/master/docs/Images/powerBi_uber_services.gif?raw=true)
+![powerBi_uber_services](https://github.com/Wittline/Uber-expenses-tracking/blob/main/docs/Images/powerBi_uber_services.gif?raw=true)
 
-![powerBi_uber_services](https://github.com/wittline/Uber-expenses-tracking/blob/master/Images/powerBi_uber_services.gif?raw=true)
 
 
 
