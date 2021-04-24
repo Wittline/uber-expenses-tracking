@@ -373,12 +373,14 @@ $ docker-compose up
 ```
 
 <p align="justify">
-Ready, everything is up and running :grin:, the next thing to do is go to your browser and search http://localhost:8080/ this will call your webserver and would open your AIRFLOW GUI, for this example the **user** and **password** is "airflow", you can change it in your **.yaml** file
+Ready!!!!, everything is up and running, the next thing to do is go to your browser and search <a href="http://localhost:8080/">http://localhost:8080</a>  this will call your webserver and would open your AIRFLOW GUI, for this example the **user** and **password** is "airflow", you can change it in your **.yaml** file
+
+</p>
 
 There is a couple of thing to configure to ensure the successful execution of your DAG:
 - Once inside your AIRFLOW GUI, In the header menu > Admin > Variables, Import the variables needed, they are located into the variables folder in the repository downloaded, import the **variables.json** file
 
-</p>
+
  
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/variables.png)
 
