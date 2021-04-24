@@ -1,4 +1,4 @@
-theme: jekyll-theme-slate
+theme: jekyll-theme-minimal
 title: "Building an ETL data pipeline with Apache Airflow and Visualizing AWS Redshift data using Microsoft Power BI (Uber expenses tracking)"
 description: "The goal of this project is to track the expenses of Uber Rides and Uber Eats services through a data Engineering processes using technologies such as Apache Airflow, AWS Redshift and Power BI. Keep reading this article, I will show you a quick and easy way to automate everything step by step."
 author: "Ramses Alexander Coraspe Valdez"
