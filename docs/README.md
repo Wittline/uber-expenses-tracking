@@ -451,7 +451,7 @@ Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad 
 - Select Home > Get Data > More > Database > Amazon Redshift
 - Click Connect
 - On the next screen, provide the following values: Server, Database and Data Connectivity Mode (Import)
-- Build your dashboards, in this case there are already two dashboards with several reports and you can use the file **report_receipts.pbix**
+- Build your dashboards, in this case there are already two dashboards with several reports on it and you can use the same example below on the file **report_receipts.pbix**
 
 
 <p align="center">
