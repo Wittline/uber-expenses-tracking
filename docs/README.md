@@ -402,7 +402,9 @@ $ docker ps
 ```
 
 - The scheduler are putting the dags for running, so, choose the container id related with the scheduler and execute the command below, it will execute the dags
-```linux 
+
+
+```linux
 $ docker exec 514e3077fafa airflow dags trigger Uber_tracking_expenses
 ```
 
