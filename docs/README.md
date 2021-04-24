@@ -18,11 +18,11 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 
 > Uber Rides receipt example
 > 
-![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/rides_receipt_example.PNG)
+![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/rides_receipt_example.png)
 
 > Uber Eats receipt example
 > 
-![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/eats_receipt_example.PNG)
+![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/eats_receipt_example.png)
 
 ## Data modelling
 
@@ -422,6 +422,7 @@ Below is the final DAG for this project:
 
 <div align="justify">
  
+ 
 Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad for Uber Eats and Uber Rides, publish the report to Power BI service, and you can consume the report from your mobile device as well.
 
 - Launch Power BI Desktop
@@ -431,7 +432,9 @@ Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad 
 - On the next screen, provide the following values: Server, Database and Data Connectivity Mode (Import)
 - Build your dashboards, in this case there are already two dashboards with several reports and you can use the file **report_receipts.pbix**
 
+
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/powerBi_uber_services.gif)
+ 
  
  
  - Publishing to Power BI, After you create the dashboards in Power BI Desktop, you will need to publish the dataset and dashboards to Power BI to share it with others or consume it from a mobile device.
