@@ -143,7 +143,7 @@ print('Files uploaded to uber-tracking-expenses-bucket-s3 AWS S3 bucket')
 
  ```python
  config = configparser.ConfigParser()
-config.read_file(open('/localpath/dwh.cfg'))
+config.read_file(open('/Uber-expenses-tracking/IAC/dwh.cfg'))
 
 KEY                    = config.get('AWS','KEY')
 SECRET                 = config.get('AWS','SECRET')
