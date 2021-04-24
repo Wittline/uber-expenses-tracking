@@ -484,8 +484,6 @@ Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad 
   <img src="https://wittline.github.io/Uber-expenses-tracking/Images/powerBi_uber_services.gif?raw=true">
  
 </p>
-
-![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/powerBi_uber_services.gif?raw=true)
  
 
    - After you create the dashboards in Power BI Desktop, you will need to publish the dataset and dashboards to Power BI to share it with others or consume it from a mobile device.
