@@ -395,7 +395,7 @@ There is a couple of thing to configure to ensure the successful execution of yo
 
 </p>
 
-### Run DAG
+### Running DAG
 
 - Open a new git-bash console and put the below command, it will show you a list of containers with their ids 
 
