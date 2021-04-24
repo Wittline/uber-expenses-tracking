@@ -15,16 +15,20 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 
 </div>
 
-> Uber Rides receipt example
+#### Uber Rides receipt example
 
-![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/rides_receipt_example.png)
+<p align="center">
+ ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/rides_receipt_example.png)
+</p>
 
 
 
+#### Uber Eats receipt example
 
-> Uber Eats receipt example
-
+<p align="center">
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/eats_receipt_example.png)
+</p>
+
 
 ## Data modelling
 
@@ -34,7 +38,10 @@ Once the details for each type of receipt have been detected, it is easy to know
 
 </div>
 
+<p align="center">
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/dwh_schema.jpg)
+</p>
+
 
 ## Infrastructure as Code (IaC) in AWS
 
@@ -315,8 +322,7 @@ print('Connected to Redshift')
 
 > Cleaning and deleting all the resources (Do not run these lines until finish your experiments)
  
- ```python 
- 
+ ```python  
 # redshift.delete_cluster( ClusterIdentifier=DWH_CLUSTER_IDENTIFIER,  SkipFinalClusterSnapshot=True)
 
 # myClusterProps = redshift.describe_clusters(ClusterIdentifier=DWH_CLUSTER_IDENTIFIER)['Clusters'][0]
@@ -324,10 +330,8 @@ print('Connected to Redshift')
  
 # iam.detach_role_policy(RoleName=DWH_IAM_ROLE_NAME, PolicyArn="arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess")
 # iam.delete_role(RoleName=DWH_IAM_ROLE_NAME)
-
  ```
  
-  
 </div>
 
 ## Building an ETL data pipeline with Apache Airflow
@@ -371,14 +375,15 @@ Ready, everything is up and running :grin:, the next thing to do is go to your b
 There is a couple of thing to configure to ensure the successful execution of your DAG:
 - Once inside your AIRFLOW GUI, In the header menu > Admin > Variables, Import the variables needed, they are located into the variables folder in the repository downloaded, import the **variables.json** file
 
-
+<p align="center">
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/variables.png)
-
+</p>
 
 - Now go to Admin > Connections and put the Connections needed, you AWS credentials and Your Redshift credentials
 
+<p align="center">
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/connections.png)
-
+</p>
 
 ### Run DAG
 
@@ -418,8 +423,9 @@ The DAG is made up of several important tasks, but I will only explain a brief s
 
 Below is the final DAG for this project:
 
+<p align="center">
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/dag.PNG)
-
+</p>
 
 ## Visualizing AWS Redshift Data using Microsoft Power BI
 
@@ -435,9 +441,6 @@ Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad 
 - On the next screen, provide the following values: Server, Database and Data Connectivity Mode (Import)
 - Build your dashboards, in this case there are already two dashboards with several reports and you can use the file **report_receipts.pbix**
 
-<div style="text-align: center;">
-    
-</div>
 
 <p align="center">
    <img src="/docs/Images/powerBi_uber_services.gif?raw=true">   
