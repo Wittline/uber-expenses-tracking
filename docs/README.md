@@ -15,7 +15,7 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 
 </div>
 
-#### Uber Rides receipt example
+### Uber Rides receipt example
 
 <p align="center">
  
@@ -25,7 +25,7 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 
 
 
-#### Uber Eats receipt example
+### Uber Eats receipt example
 
 <p align="center">
  
