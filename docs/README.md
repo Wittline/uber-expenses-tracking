@@ -47,6 +47,8 @@ The aim of this section is to create a Redshift cluster on AWS and keep it avail
 
 Below we list the different steps and the things carried out in this file:
 
+</p>
+
 - Install <a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">git-bash for windows</a>, once installed , open **git bash** and download this repository, this will download the **dags** folder and the **docker-compose.yaml** file, and other files needed.
 
 ``` 
@@ -79,7 +81,6 @@ $ git clone https://github.com/Wittline/Uber-expenses-tracking.git
     - Checking the connection to the Redshift cluster
     - Cleaning and deleting the resources
 
-</p>
 
 #### Content of ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb***
 
