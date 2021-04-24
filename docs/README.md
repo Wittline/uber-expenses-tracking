@@ -370,6 +370,7 @@ Ready, everything is up and running :grin:, the next thing to do is go to your b
 There is a couple of thing to configure to ensure the successful execution of your DAG:
 - Once inside your AIRFLOW GUI, In the header menu > Admin > Variables, Import the variables needed, they are located into the variables folder in the repository downloaded, import the **variables.json** file
 
+
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/variables.png)
 
 
