@@ -467,10 +467,10 @@ Below is the final DAG for this project:
 
 ## Visualizing AWS Redshift data using Microsoft Power BI
 
-<div align="justify">
- 
- 
+<p align="justify">
 Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad for Uber Eats and Uber Rides, publish the report to Power BI service, and you can consume the report from your mobile device as well.
+ 
+</p>
 
 - Launch Power BI Desktop
 - Sign in to the Service with your Power BI credentials
@@ -481,17 +481,15 @@ Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad 
 
 
 <p align="center">
+  <img src="/docs/Images/powerBi_uber_services.gif?raw=true">
  
-   <img src="/docs/Images/powerBi_uber_services.gif?raw=true">
-   
 </p>
 
- - Publishing to Power BI, After you create the dashboards in Power BI Desktop, you will need to publish the dataset and dashboards to Power BI to share it with others or consume it from a mobile device.
+   - After you create the dashboards in Power BI Desktop, you will need to publish the dataset and dashboards to Power BI to share it with others or consume it from a mobile device.
    - In Power BI Desktop, choose Publish
    - Choose My workspace.
    - Choose Select.
 
-</div>
 
 
 ## Contributing and Feedback
