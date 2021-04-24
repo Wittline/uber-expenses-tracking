@@ -426,25 +426,32 @@ The DAG is made up of several important tasks, but I will only explain a brief s
 <li><p align="justify">At the beginning, the task called <strong>Start_UBER_Business</strong> is separating the Uber Eats receipts from the Uber rides receipts found in the S3 bucket <strong>uber-tracking-expenses-bucket-s3</strong> in the folder <strong>unprocessed_receipts</strong>, both groups of receipts will be processed in parallel by the tasks <strong>rides_receipts_to_s3_task</strong> and <strong>eats_receipts_to_s3_task</strong></p>
 </li>
 
-<li><p align="justify">The goal of these two tasks <strong>rides_receipts_to_s3_task</strong> and <strong>eats_receipts_to_s3_task</strong> that are running in parallel, is to condense in a single file all processed receipts of each kind eats and rides, the final datasets will be placed in the bucket <strong>airflow-runs-receipts</strong>, under the <strong>/rides</strong> and <strong>/eats</strong> folders as the case may be, the files are:</p>
-     <ul>
-      <li>eats_receipts.csv: contains the information of all the receipts found for UBER Eats.</li>
-      <li>items_eats_receipts.csv: contains information of all the products involved in the purchase of an order from UBER eats</li>
-      <li>rides_receipts.csv: contains information on all receipts found for UBER Eats</li>
-    </ul>  
+<li>
+ <p align="justify">The goal of these two tasks <strong>rides_receipts_to_s3_task</strong> and <strong>eats_receipts_to_s3_task</strong> that are running in parallel, is to condense in a single file all processed receipts of each kind eats and rides, the final datasets will be placed in the bucket <strong>airflow-runs-receipts</strong>, under the <strong>/rides</strong> and <strong>/eats</strong> folders as the case may be, the files are:</p>
+ 
+<ul>
+ <li><p align="justify">eats_receipts.csv: contains the information of all the receipts found for UBER Eats.</p></li>
+ <li><p align="justify">items_eats_receipts.csv: contains information of all the products involved in the purchase of an order from UBER eats.</p></li>
+ <li><p align="justify">rides_receipts.csv: contains information on all receipts found for UBER Eats.</p></li>
+</ul>
+    
 </li>
 
 <li><p align="justify">Once the two previous processes are finished, the tasks related to create the necessary objects in redshift are executed, dimension tables, fact tables and staging tables.</p>
 </li>
 <li><p align="justify">Once the tables were created in Redshift, Now the staging tables will be filled. The COPY command is useful for move the .csv files from the S3 bucket to Redshift, there are several benefits of staging data: <a href="https://help.gooddata.com/doc/enterprise/en/data-integration/data-preparation-and-distribution/data-preparation-and-distribution-pipeline/data-pipeline-reference/data-warehouse-reference/how-to-set-up-a-connection-to-data-warehouse/connecting-to-data-warehouse-from-cloudconnect/loading-data-through-cloudconnect-to-data-warehouse/merging-data-using-staging-tables">Merging Data Using Staging Tables</a></p>
-      <ul>
-      <li>staging_rides</li>
-      <li>staging_eats</li>
-      <li>staging_eats_items</li>
-    </ul>
+ 
+ <ul>
+ <li><p align="justify">staging_rides</p></li>
+ <li><p align="justify">staging_eats</p></li>
+ <li><p align="justify">staging_eats_items</p></li>
+ </ul>
+    
 </li>
 
-<li><p align="justify">Once all the staging tables were created and filled, now the dimension tables will be filled, as you can see in the file <strong>sql_statements.py</strong> all the necessary dimensions and fact tables for the DWH depend on the information contained in the staging tables. To maintain the consistency of the data, we are filling the dimensions first and then the fact tables, there would be no problem using other way around, because redshift does not validate the foreign keys, <a href="https://www.stitchdata.com/blog/how-redshift-differs-from-postgresql/">this is because redshift is a database which focuses on handling large volumes of data for analytical queries.</a></p>
+<li>
+ <p align="justify">Once all the staging tables were created and filled, now the dimension tables will be filled, as you can see in the file <strong>sql_statements.py</strong> all the necessary dimensions and fact tables for the DWH depend on the information contained in the staging tables. To maintain the consistency of the data, we are filling the dimensions first and then the fact tables, there would be no problem using other way around, because redshift does not validate the foreign keys, <a href="https://www.stitchdata.com/blog/how-redshift-differs-from-postgresql/">this is because redshift is a database which focuses on handling large volumes of data for analytical queries.</a>
+ </p>
 </li>
 <li><p align="justify">Once the filling of all the DWH tables is finished, we proceed to validate if there are records in them, it is a good practice to maintain a  <a href="https://arun-karunakaran.medium.com/build-quality-into-extract-transform-and-load-process-c02795ddcc93">data quality check</a> section in your ETL process for data integration. In the end, I deleted the staging tables because they are no longer needed.</p>
 </li>
