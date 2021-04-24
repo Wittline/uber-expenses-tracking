@@ -378,17 +378,19 @@ Ready!!!!, everything is up and running, the next thing to do is go to your brow
 </p>
 
 There is a couple of thing to configure to ensure the successful execution of your DAG:
-- Once inside your AIRFLOW GUI, In the header menu > Admin > Variables, Import the variables needed, they are located into the variables folder in the repository downloaded, import the **variables.json** file
+
+- Once inside your AIRFLOW GUI, In the header menu -> Admin -> Variables, Import the variables needed, they are located into the variables folder in the repository downloaded, import the **variables.json** file
 
 
  
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/variables.png)
 
 
-- Now go to Admin > Connections and put the Connections needed, you AWS credentials and Your Redshift credentials
+- Now go to Admin -> Connections and put the Connections needed, you AWS credentials and Your Redshift credentials
 
  
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/connections.png)
+
 
 
 ### Running DAG
@@ -404,15 +406,21 @@ $ docker ps
 $ docker exec 514e3077fafa airflow dags trigger Uber_tracking_expenses
 ```
 
-- The other way for execute dags is using the GUI, which is easier to understand and manage :wink:
+- The other way for execute dags is using the GUI, which is easier to understand and manage
 
 
 ### DAG Details
 
+<p align="justify">
 The DAG is made up of several important tasks, but I will only explain a brief summary  of what it does:
 
+</p>
 
+<p align="justify">
 - At the beginning, the task called **Start_UBER_Business** is separating the Uber Eats receipts from the Uber rides receipts found in the S3 bucket **uber-tracking-expenses-bucket-s3** in the folder **unprocessed_receipts**, both groups of receipts will be processed in parallel by the tasks **rides_receipts_to_s3_task** and **eats_receipts_to_s3_task**
+
+</p>
+
 - The goal of these two tasks **rides_receipts_to_s3_task** and **eats_receipts_to_s3_task** that are running in parallel, is to condense in a single file all processed receipts of each kind eats and rides, the final datasets will be placed in the bucket **airflow-runs-receipts**, under the **/rides** and **/eats** folders as the case may be, the files are:
   - eats_receipts.csv: contains the information of all the receipts found for UBER Eats.
   - items_eats_receipts.csv: contains information of all the products involved in the purchase of an order from UBER eats
