@@ -350,7 +350,6 @@ Amazon AWS has an answer to the need of data engineers who love Apache Airflow i
 - Once all the files needed were downloaded from the repository , Let's run everything we will use the git bash tool again, go to the folder **Uber-expenses-tracking** we will run docker compose command
 
 
-
 ```linux 
 ramse@DESKTOP-K6K6E5A MINGW64 /c
 $ cd Uber-expenses-tracking
