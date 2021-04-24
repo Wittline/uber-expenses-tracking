@@ -387,7 +387,6 @@ There is a couple of thing to configure to ensure the successful execution of yo
 
 - Now go to Admin > Connections and put the Connections needed, you AWS credentials and Your Redshift credentials
 
-
  
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/connections.png)
 
