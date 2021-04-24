@@ -333,10 +333,10 @@ print('Connected to Redshift')
 
 ## Building an ETL data pipeline with Apache Airflow
 
-<div align="justify">
-
+<p align="justify">
 This project requires that you have prior knowledge of these technologies, however my YouTube video could help you in case you do not have experience with the tools, in this way you can mount the project without the need of previous experience. I will not delve into explaining what Apache Airflow is, this section will focus on explaining the process of data integration of the UBER receipts until reaching a common data source, the final data source is the data model that was designed in the previous section. :running: :stuck_out_tongue_winking_eye:
 
+</p>
 ### Docker environment
 
 Amazon AWS has an answer to the need of data engineers who love Apache Airflow in the cloud, here you can read more about it: <a href="https://aws.amazon.com/es/blogs/aws/introducing-amazon-managed-workflows-for-apache-airflow-mwaa/">Introducing Amazon Managed Workflows for Apache Airflow (MWAA)</a>, However this project uses a <a href="https://www.docker.com/">Docker</a> container, follow the steps below in order to accelerate the deployment of this project using docker:
@@ -418,7 +418,7 @@ The DAG is made up of several important tasks, but I will only explain a brief s
 - Once all the staging tables were created and filled, now the dimension tables will be filled, as you can see in the file **sql_statements.py** all the necessary dimensions and fact tables for the DWH depend on the information contained in the staging tables. To maintain the consistency of the data, we re filling the dimensions first and then the fact tables, there would be no problem using other way around, because redshift does not validate the foreign keys, <a href="https://www.stitchdata.com/blog/how-redshift-differs-from-postgresql/">this is because redshift is a database which focuses on handling large volumes of data for analytical queries.</a>
 - Once the filling of all the DWH tables is finished, we proceed to validate if there are records in them, it is a good practice to maintain a  <a href="https://arun-karunakaran.medium.com/build-quality-into-extract-transform-and-load-process-c02795ddcc93">data quality check</a> section in your ETL process for data integration. In the end, I deleted the staging tables because they are no longer needed.
 
-</div>
+
 
 Below is the final DAG for this project:
 
