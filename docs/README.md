@@ -8,9 +8,8 @@ Have you heard phrases like <strong>Hungry? You're in the right place</strong> o
 
 ## What are the data sources?
 
-<div align="justify">
- 
-Every time an Ubers Eat or Uber Rides service has ended, you will receive a payment receipt to your email, this receipt contains the information about the details of the service, and is attached to the email with the extension ***.eml***. Take a look at the image below, both receipts belong to the details sent by Uber about Eats and Rides services, this will be our original data sources, In my case, I downloaded all those receipts from my email to my local computer.
+<p align="justify"> 
+Every time an Ubers Eat or Uber Rides service has ended, you will receive a payment receipt to your email, this receipt contains the information about the details of the service, and is attached to the email with the extension <strong>.eml</strong>. Take a look at the image below, both receipts belong to the details sent by Uber about Eats and Rides services, this will be our original data sources, In my case, I downloaded all those receipts from my email to my local computer.
 
 </div>
 
@@ -32,8 +31,7 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 
 ## Data modelling
 
-<div align="justify">
- 
+<p align="justify"> 
 Once the details for each type of receipt have been detected, it is easy to know what are the features, entities, and relations of the model. My proposed data model contains the expenses of both services separated in different fact tables, sharing dimensions between these facts, therefore, the proposed model will be a constellation scheme.
 
 </div>
@@ -45,9 +43,8 @@ Once the details for each type of receipt have been detected, it is easy to know
 
 ## Infrastructure as Code (IaC) in AWS
 
-<div align="justify">
- 
-The aim of this section is to create a Redshift cluster on AWS and keep it available for use by the airflow DAG. In addition to preparing the infrastructure, the file ***AWS-IAC-IAM-EC2-S3-Redshift.ipynb*** will help you to have an alternative staging zone in S3 as well.
+<p align="justify"> 
+The aim of this section is to create a Redshift cluster on AWS and keep it available for use by the airflow DAG. In addition to preparing the infrastructure, the file <strong>AWS-IAC-IAM-EC2-S3-Redshift.ipynb</strong> will help you to have an alternative staging zone in S3 as well.
 
 Below we list the different steps and the things carried out in this file:
 
