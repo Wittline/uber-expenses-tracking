@@ -334,16 +334,20 @@ print('Connected to Redshift')
 ## Building an ETL data pipeline with Apache Airflow
 
 <p align="justify">
-This project requires that you have prior knowledge of these technologies, however my YouTube video could help you in case you do not have experience with the tools, in this way you can mount the project without the need of previous experience. I will not delve into explaining what Apache Airflow is, this section will focus on explaining the process of data integration of the UBER receipts until reaching a common data source, the final data source is the data model that was designed in the previous section. :running: :stuck_out_tongue_winking_eye:
+This project requires that you have prior knowledge of these technologies, however my YouTube video could help you in case you do not have experience with the tools, in this way you can mount the project without the need of previous experience. I will not delve into explaining what Apache Airflow is, this section will focus on explaining the process of data integration of the UBER receipts until reaching a common data source, the final data source is the data model that was designed in the previous section.
 
 </p>
+
 ### Docker environment
 
+<p align="justify">
 Amazon AWS has an answer to the need of data engineers who love Apache Airflow in the cloud, here you can read more about it: <a href="https://aws.amazon.com/es/blogs/aws/introducing-amazon-managed-workflows-for-apache-airflow-mwaa/">Introducing Amazon Managed Workflows for Apache Airflow (MWAA)</a>, However this project uses a <a href="https://www.docker.com/">Docker</a> container, follow the steps below in order to accelerate the deployment of this project using docker:
 
 - Install <a href="https://docs.docker.com/docker-for-windows/install/">Docker Desktop on Windows</a>, it will install **docker compose** as well, docker compose will alow you to run multiple containers applications, Apache airflow has three main components: **metadata database**, **scheduler** and **webserver**, in this case we will use a celery executor too.
 
 - Once all the files needed were downloaded from the repository , Let's run everything :see_no_evil: :hear_no_evil: :speak_no_evil: we will use the git bash tool again, go to the folder **Uber-expenses-tracking** we will run docker compose command
+
+</p>
 
 ```linux 
 ramse@DESKTOP-K6K6E5A MINGW64 /c
@@ -367,12 +371,13 @@ $ docker-compose up airflow-init
 $ docker-compose up
 ```
 
+<p align="justify">
 Ready, everything is up and running :grin:, the next thing to do is go to your browser and search http://localhost:8080/ this will call your webserver and would open your AIRFLOW GUI, for this example the **user** and **password** is "airflow", you can change it in your **.yaml** file
 
 There is a couple of thing to configure to ensure the successful execution of your DAG:
 - Once inside your AIRFLOW GUI, In the header menu > Admin > Variables, Import the variables needed, they are located into the variables folder in the repository downloaded, import the **variables.json** file
 
-
+</p>
  
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/variables.png)
 
