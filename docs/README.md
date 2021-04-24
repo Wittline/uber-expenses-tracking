@@ -6,7 +6,6 @@ Have you heard phrases like <strong>Hungry? You're in the right place</strong> o
 </p>
 
 
-
 ## What are the data sources?
 
 <p align="justify"> 
@@ -19,11 +18,9 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/rides_receipt_example.png)
  
 
-
 ### Uber Eats receipt example
 
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/eats_receipt_example.png)
-
 
 
 ## Data modelling
