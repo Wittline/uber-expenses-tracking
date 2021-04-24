@@ -425,19 +425,25 @@ The DAG is made up of several important tasks, but I will only explain a brief s
 </li>
 
 <li>The goal of these two tasks **rides_receipts_to_s3_task** and **eats_receipts_to_s3_task** that are running in parallel, is to condense in a single file all processed receipts of each kind eats and rides, the final datasets will be placed in the bucket **airflow-runs-receipts**, under the **/rides** and **/eats** folders as the case may be, the files are:
-  - eats_receipts.csv: contains the information of all the receipts found for UBER Eats.
-  - items_eats_receipts.csv: contains information of all the products involved in the purchase of an order from UBER eats
-  - rides_receipts.csv: contains information on all receipts found for UBER Eats
+     <ul>
+      <li>eats_receipts.csv: contains the information of all the receipts found for UBER Eats.</li>
+      <li>items_eats_receipts.csv: contains information of all the products involved in the purchase of an order from UBER eats</li>
+      <li>rides_receipts.csv: contains information on all receipts found for UBER Eats</li>
+    </ul>  
 </li>
 <li>Once the two previous processes are finished, the tasks related to create the necessary objects in redshift are executed, dimension tables, fact tables and staging tables.
 </li>
-<li>Once the tables were created in Redshift, Now the staging tables will be filled. The COPY command is useful for move the .csv files from the S3 bucket to Redshift, There are several benefits of staging data: <a href="https://help.gooddata.com/doc/enterprise/en/data-integration/data-preparation-and-distribution/data-preparation-and-distribution-pipeline/data-pipeline-reference/data-warehouse-reference/how-to-set-up-a-connection-to-data-warehouse/connecting-to-data-warehouse-from-cloudconnect/loading-data-through-cloudconnect-to-data-warehouse/merging-data-using-staging-tables">Merging Data Using Staging Tables</a>
-  - staging_rides
-  - staging_eats
-  - staging_eats_items
+<li>Once the tables were created in Redshift, Now the staging tables will be filled. The COPY command is useful for move the .csv files from the S3 bucket to Redshift, there are several benefits of staging data: <a href="https://help.gooddata.com/doc/enterprise/en/data-integration/data-preparation-and-distribution/data-preparation-and-distribution-pipeline/data-pipeline-reference/data-warehouse-reference/how-to-set-up-a-connection-to-data-warehouse/connecting-to-data-warehouse-from-cloudconnect/loading-data-through-cloudconnect-to-data-warehouse/merging-data-using-staging-tables">Merging Data Using Staging Tables</a> 
+      <ul>
+      <li>staging_rides</li>
+      <li>staging_eats</li>
+      <li>staging_eats_items</li>
+    </ul>
 </li> 
-- Once all the staging tables were created and filled, now the dimension tables will be filled, as you can see in the file **sql_statements.py** all the necessary dimensions and fact tables for the DWH depend on the information contained in the staging tables. To maintain the consistency of the data, we re filling the dimensions first and then the fact tables, there would be no problem using other way around, because redshift does not validate the foreign keys, <a href="https://www.stitchdata.com/blog/how-redshift-differs-from-postgresql/">this is because redshift is a database which focuses on handling large volumes of data for analytical queries.</a>
-- Once the filling of all the DWH tables is finished, we proceed to validate if there are records in them, it is a good practice to maintain a  <a href="https://arun-karunakaran.medium.com/build-quality-into-extract-transform-and-load-process-c02795ddcc93">data quality check</a> section in your ETL process for data integration. In the end, I deleted the staging tables because they are no longer needed.
+<li>Once all the staging tables were created and filled, now the dimension tables will be filled, as you can see in the file **sql_statements.py** all the necessary dimensions and fact tables for the DWH depend on the information contained in the staging tables. To maintain the consistency of the data, we re filling the dimensions first and then the fact tables, there would be no problem using other way around, because redshift does not validate the foreign keys, <a href="https://www.stitchdata.com/blog/how-redshift-differs-from-postgresql/">this is because redshift is a database which focuses on handling large volumes of data for analytical queries.</a>
+</li>
+<li>Once the filling of all the DWH tables is finished, we proceed to validate if there are records in them, it is a good practice to maintain a  <a href="https://arun-karunakaran.medium.com/build-quality-into-extract-transform-and-load-process-c02795ddcc93">data quality check</a> section in your ETL process for data integration. In the end, I deleted the staging tables because they are no longer needed.
+</li>
 </ul>
 </p>
 
