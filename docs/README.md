@@ -11,7 +11,7 @@ Have you heard phrases like <strong>Hungry? You're in the right place</strong> o
 <p align="justify"> 
 Every time an Ubers Eat or Uber Rides service has ended, you will receive a payment receipt to your email, this receipt contains the information about the details of the service, and is attached to the email with the extension <strong>.eml</strong>. Take a look at the image below, both receipts belong to the details sent by Uber about Eats and Rides services, this will be our original data sources, In my case, I downloaded all those receipts from my email to my local computer.
 
-</div>
+</p>
 
 ### Uber Rides receipt example
 
