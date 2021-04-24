@@ -426,7 +426,7 @@ The DAG is made up of several important tasks, but I will only explain a brief s
 <li><p align="justify">At the beginning, the task called <strong>Start_UBER_Business</strong> is separating the Uber Eats receipts from the Uber rides receipts found in the S3 bucket <strong>uber-tracking-expenses-bucket-s3</strong> in the folder <strong>unprocessed_receipts</strong>, both groups of receipts will be processed in parallel by the tasks <strong>rides_receipts_to_s3_task</strong> and <strong>eats_receipts_to_s3_task</strong></p>
 </li>
 
-<li><p align="justify">The goal of these two tasks <strong>rides_receipts_to_s3_task</strong> and <strong>eats_receipts_to_s3_task</strong> that are running in parallel, is to condense in a single file all processed receipts of each kind eats and rides, the final datasets will be placed in the bucket <strong>airflow-runs-receipts<strong>, under the <strong>/rides</strong> and <strong>/eats</strong> folders as the case may be, the files are:</p>
+<li><p align="justify">The goal of these two tasks <strong>rides_receipts_to_s3_task</strong> and <strong>eats_receipts_to_s3_task</strong> that are running in parallel, is to condense in a single file all processed receipts of each kind eats and rides, the final datasets will be placed in the bucket <strong>airflow-runs-receipts</strong>, under the <strong>/rides</strong> and <strong>/eats</strong> folders as the case may be, the files are:</p>
      <ul>
       <li>eats_receipts.csv: contains the information of all the receipts found for UBER Eats.</li>
       <li>items_eats_receipts.csv: contains information of all the products involved in the purchase of an order from UBER eats</li>
