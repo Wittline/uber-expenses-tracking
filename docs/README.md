@@ -373,7 +373,7 @@ $ docker-compose up
 ```
 
 <p align="justify">
-Ready!!!!, everything is up and running, the next thing to do is go to your browser and search <a href="http://localhost:8080/">http://localhost:8080</a>  this will call your webserver and would open your AIRFLOW GUI, for this example the **user** and **password** is "airflow", you can change it in your **.yaml** file
+Ready!!!!, everything is up and running, the next thing to do is go to your browser and search <a href="http://localhost:8080/">http://localhost:8080</a>  this will call your webserver and would open your AIRFLOW GUI, for this example the <strong>user</strong> and <strong>password</strong> is "airflow", you can change it in your <strong>.yaml</strong> file.
 
 </p>
 
