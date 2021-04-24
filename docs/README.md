@@ -431,7 +431,7 @@ The DAG is made up of several important tasks, but I will only explain a brief s
  
 <ul>
  <li><p align="justify">eats_receipts.csv: contains the information of all the receipts found for UBER Eats.</p></li>
- <li><p align="justify">items_eats_receipts.csv: contains information of all the products involved in the purchase of an order from UBER eats.</p></li>
+ <li><p align="justify">items_eats_receipts.csv: contains information of all the products involved in the purchase.</p></li>
  <li><p align="justify">rides_receipts.csv: contains information on all receipts found for UBER Eats.</p></li>
 </ul>
     
