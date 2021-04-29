@@ -10,7 +10,6 @@ Have you heard phrases like <strong>Hungry? You're in the right place</strong> o
 ![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/architecture.png)
 
 
-
 ## What are the data sources?
 
 <p align="justify"> 
