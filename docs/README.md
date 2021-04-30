@@ -478,6 +478,7 @@ Now, you will connect Power BI Desktop to AWS Redshift data, create a dashborad 
 - Click Connect
 - On the next screen, provide the following values: Server, Database and Data Connectivity Mode (Import)
 - Build your dashboards, in this case there are already two dashboards with several reports on it and you can use the same example below on the file **report_receipts.pbix**
+- Update your redshift cluster, it will change
 
 
 ![powerBi_uber_services6](https://user-images.githubusercontent.com/8701464/115949563-97e22b00-a49b-11eb-92ab-5459b4469f5f.gif)
