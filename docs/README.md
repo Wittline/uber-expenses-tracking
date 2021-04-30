@@ -335,7 +335,7 @@ print('Connected to Redshift')
 ## Building an ETL data pipeline with Apache Airflow
 
 <p align="justify">
-This project requires that you have prior knowledge of these technologies, however my YouTube video could help you in case you do not have experience with the tools, in this way you can mount the project without the need of previous experience. I will not delve into explaining what Apache Airflow is, this section will focus on explaining the process of data integration of the UBER receipts until reaching a common data source, the final data source is the data model that was designed in the previous section.
+This project requires that you have prior knowledge of these technologies, however my <a href="https://youtu.be/LlV0GxjNdVw">YouTube</a>  video could help you in case you do not have experience with the tools, in this way you can mount the project without the need of previous experience. I will not delve into explaining what Apache Airflow is, this section will focus on explaining the process of data integration of the UBER receipts until reaching a common data source, the final data source is the data model that was designed in the previous section.
 
 </p>
 
