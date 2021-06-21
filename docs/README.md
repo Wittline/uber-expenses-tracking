@@ -9,7 +9,7 @@ Have you heard phrases like <strong>Hungry? You're in the right place</strong> o
 
 # Uber expenses tracking
 
-![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/architecture.png)
+![alt text](https://wittline.github.io/uber-expenses-tracking/Images/architecture.png)
 
 
 
@@ -23,12 +23,12 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 
 ### Uber Rides receipt example
 
-![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/rides_receipt_example.png)
+![alt text](https://wittline.github.io/uber-expenses-tracking/Images/rides_receipt_example.png)
  
 
 ### Uber Eats receipt example
 
-![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/eats_receipt_example.png)
+![alt text](https://wittline.github.io/uber-expenses-tracking/Images/eats_receipt_example.png)
 
 
 ## Data modelling
@@ -39,7 +39,7 @@ Once the details for each type of receipt have been detected, it is easy to know
 </p>
 
  
-![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/dwh_schema.jpg)
+![alt text](https://wittline.github.io/uber-expenses-tracking/Images/dwh_schema.jpg)
 
 
 
