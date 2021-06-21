@@ -464,7 +464,7 @@ Below is the final DAG for this project:
 
 
  
-![alt text](https://wittline.github.io/Uber-expenses-tracking/Images/dag.PNG)
+![alt text](https://wittline.github.io/uber-expenses-tracking/Images/dag.PNG)
 
 
 ## Visualizing AWS Redshift data using Microsoft Power BI
