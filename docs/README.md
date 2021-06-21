@@ -56,7 +56,7 @@ Below we list the different steps and the things carried out in this file:
 
 ``` 
 ramse@DESKTOP-K6K6E5A MINGW64 /c
-$ git clone https://github.com/Wittline/Uber-expenses-tracking.git
+$ git clone https://github.com/Wittline/uber-expenses-tracking.git
 ```
 - Second, create a new User in AWS with *AdministratorAccess** and get your security credentials
 - Go to this url: <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html ">AWS CLI </a> and configure your AWS Credentials in your local machine
