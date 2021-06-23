@@ -7,7 +7,7 @@ Have you heard phrases like <strong>Hungry? You're in the right place</strong> o
 </p>
 
 
-# Uber expenses tracking
+# Uber expenses tracking (Architecture)
 
 ![alt text](https://wittline.github.io/uber-expenses-tracking/Images/architecture.png)
 
