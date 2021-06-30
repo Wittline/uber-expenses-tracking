@@ -125,7 +125,9 @@ def staging_eats_to_redshift(*args, **kwargs):
     aws_hook = AwsHook(aws_conn_id ="aws_credentials", client_type ='s3')
     credentials = aws_hook.get_credentials()
     redshift_hook = PostgresHook("redshift")
+    bucket = str(Variable.get('s3_bucket'))    
     sql_stmt = sql_statements.COPY_ALL_EATS_SQL.format(
+        bucket,
         credentials.access_key,
         credentials.secret_key,
     )
@@ -136,7 +138,9 @@ def staging_rides_to_redshift(*args, **kwargs):
     aws_hook = AwsHook(aws_conn_id ="aws_credentials", client_type ='s3')
     credentials = aws_hook.get_credentials()
     redshift_hook = PostgresHook("redshift")
+    bucket = str(Variable.get('s3_bucket'))
     sql_stmt = sql_statements.COPY_ALL_RIDES_SQL.format(
+        bucket,
         credentials.access_key,
         credentials.secret_key,
     )
@@ -147,7 +151,9 @@ def staging_items_to_redshift(*args, **kwargs):
     aws_hook = AwsHook(aws_conn_id ="aws_credentials", client_type ='s3')
     credentials = aws_hook.get_credentials()
     redshift_hook = PostgresHook("redshift")
+    bucket = str(Variable.get('s3_bucket'))
     sql_stmt = sql_statements.COPY_ALL_EATS_ITEMS_SQL.format(
+        bucket,
         credentials.access_key,
         credentials.secret_key,
     )
@@ -164,7 +170,7 @@ def processing_rides_receipts(rides):
     print("Processing Uber Rides Receipts")
 
     hook = S3Hook(aws_conn_id='aws_credentials')
-    bucket = Variable.get('s3_bucket')
+    bucket = 'uber-tracking-expenses-bucket-s3-' + str(Variable.get('s3_bucket'))
 
     replace_chars = ["[","]","'"]
 
@@ -184,8 +190,8 @@ def processing_rides_receipts(rides):
         result = dr.get_data()                
         all_receipts.append(result)
 
-
-    dr.save_as_csv(all_receipts, 'airflow-runs-receipts')       
+    print("SAVING ALL.........")
+    dr.save_as_csv(all_receipts, bucket, '' )       
 
 def processing_eats_receipts(eats):
     
@@ -197,7 +203,7 @@ def processing_eats_receipts(eats):
     print("Processing Uber Eats Receipts")
 
     hook = S3Hook(aws_conn_id='aws_credentials')
-    bucket = Variable.get('s3_bucket')
+    bucket = 'uber-tracking-expenses-bucket-s3-' + str(Variable.get('s3_bucket'))
 
     replace_chars = ["[","]","'"]
 
@@ -212,7 +218,7 @@ def processing_eats_receipts(eats):
     
     for eat in range(0, len(eats)):
         print("Processing receipt:", eats[eat])
-        obj = hook.get_key(eats[eat].strip(), bucket)
+        obj = hook.get_key(eats[eat].strip(),  bucket)
         bt = obj.get()['Body'].read()
         eml = eml_parser.eml_parser.decode_email_b(bt,True,True)
         dr = data_receipts('eats', eml, eats[eat].strip(), eat)
@@ -222,16 +228,16 @@ def processing_eats_receipts(eats):
         for i in items:
             all_items.append(i)
 
-
-    dr.save_as_csv(all_receipts, 'airflow-runs-receipts')
-    dr.save_as_csv(all_items, 'airflow-runs-receipts', 'items_')
+    print("SAVING ALL.........")
+    dr.save_as_csv(all_receipts, bucket,  '')
+    dr.save_as_csv(all_items, bucket, 'items_')
 
 
 def Start_UBER_Business(**kwargs):
 
     hook = S3Hook(aws_conn_id='aws_credentials')
-    bucket = Variable.get('s3_bucket')
-    prefix = Variable.get('s3_prefix')
+    bucket = 'uber-tracking-expenses-bucket-s3-' + str(Variable.get('s3_bucket'))
+    prefix = 'unprocessed_receipts'
 
     print(bucket, prefix)
     
