@@ -9,17 +9,17 @@ DELIMITER ';'
 
 COPY_ALL_RIDES_SQL = COPY_SQL.format(
     "staging_rides",
-    "s3://airflow-runs-receipts/rides/rides_receipts.csv"
+    f's3://uber-tracking-expenses-bucket-s3-{{}}/rides/rides_receipts.csv'
 )
 
 COPY_ALL_EATS_SQL = COPY_SQL.format(
     "staging_eats",
-    "s3://airflow-runs-receipts/eats/eats_receipts.csv"
+    f's3://uber-tracking-expenses-bucket-s3-{{}}/eats/eats_receipts.csv'
 )
 
 COPY_ALL_EATS_ITEMS_SQL = COPY_SQL.format(
     "staging_eats_items",
-    "s3://airflow-runs-receipts/eats/items_eats_receipts.csv"
+    f's3://uber-tracking-expenses-bucket-s3-{{}}/eats/items_eats_receipts.csv'
 )
 
 
