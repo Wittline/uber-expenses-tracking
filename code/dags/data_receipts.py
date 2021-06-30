@@ -18,7 +18,6 @@ class data_receipts:
         self.id = id
 
     def save_as_csv(self, r, b, n = ''):
-
         aws_connection = BaseHook.get_connection('aws_credentials')
         s3 = s3fs.S3FileSystem(anon=False,  key = aws_connection.login, secret= aws_connection.password)
         s3.read_timeout = 3600
@@ -27,9 +26,9 @@ class data_receipts:
         with s3.open(b + '/' + self.business  + '/' + csv_file,'w', newline='') as output_file:
             dict_writer = csv.DictWriter( output_file, keys, delimiter=";")
             dict_writer.writeheader()
-            dict_writer.writerows(r)        
+            dict_writer.writerows(r)   
 
-        print("Dataset of receipts saved as ", csv_file )        
+        print("Dataset of receipts saved as ", csv_file )      
 
     
     def get_data(self):
