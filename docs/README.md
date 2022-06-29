@@ -7,12 +7,9 @@ Have you heard phrases like <strong>Hungry? You're in the right place</strong> o
  
 </p>
 
-
 # Architecture - Uber expenses tracking
 
 ![alt text](https://wittline.github.io/uber-expenses-tracking/Images/architecture.png)
-
-
 
 
 ## What are the data sources?
@@ -31,7 +28,6 @@ Every time an Ubers Eat or Uber Rides service has ended, you will receive a paym
 ### Uber Eats receipt example
 
 ![alt text](https://wittline.github.io/uber-expenses-tracking/Images/eats_receipt_example.png)
-
 
 
 ## Data modelling
